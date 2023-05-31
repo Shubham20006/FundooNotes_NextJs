@@ -163,7 +163,7 @@ function Header({ handleDrawer,title }) {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar className='bg-white border-b-[0.5px] border-[rgb(110,110,110)]'>
+                <Toolbar className='bg-white border-b-[0.5px] border-[rgb(110,110,110)] w-screen'>
                     <IconButton
                         size="large"
                         edge="start"

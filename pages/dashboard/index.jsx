@@ -52,7 +52,7 @@ function Dashboard() {
 //   }, [typeOfNotes])
 
   return (
-    <div >
+    <div className='w-screen' >
       <Header handleDrawer={handleDrawer} />
       <NavDrawer/>
       {/* <NavDrawer open={open} setTypeOfNotes={setTypeOfNotes} />

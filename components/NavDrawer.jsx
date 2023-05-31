@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
+// import "../pages/NavDrawer.css"
 //import { connect } from "react-redux"
 
 
@@ -21,23 +21,27 @@ const drawerWidth = 240;
 const openedMixin = (theme) => ({
     width: drawerWidth,
 
+
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
+
     }),
     overflowX: 'hidden',
+
 });
 
 const closedMixin = (theme) => ({
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
-
         duration: theme.transitions.duration.leavingScreen,
     }),
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
         width: `calc(${theme.spacing(8)} + 1px)`,
+        marginTop: "63px",
+       // backgroundColor:"red"
     },
 });
 
@@ -66,6 +70,7 @@ function NavDrawer({ open, setTypeOfNotes, dispatch }) {
         <Box sx={{ display: 'flex' }}>
             <Drawer variant="permanent" open={open}>
                 <List  >
+
                     <ListItem key={'Notes'} onClick={() => dispatch({ type: "Notes" })} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             onClick={() => setTypeOfNotes('Notes')}
