@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Header from '@/components/Header';
 import NavDrawer from '@/components/NavDrawer';
-// import TakeNoteOne from "../../Components/TakeNoteone/TakeNoteOne";
+import TakeNoteOne from '@/components/TakeNoteOne';
+import TakeNoteTwo from '@/components/TakeNoteTwo';
 // import TakeNoteThree from "../../Components/TakeNoteThree/TakeNoteThree";
 // import TakeNoteTwo from "../../Components/TakeNoteTwo/TakeNoteTwo";
 // import { getNotes } from '../../Services/dataservice';
@@ -17,49 +18,48 @@ function Dashboard() {
   const handleDrawer = () => {
     setOpen(!open);
   };
-//   const listenTakeNoteOne = () => {
-//     setToggle(false);
-//   }
-//   const listenTakeNoteTwo = () => {
-//     setToggle(true);
-//   }
+    const listenTakeNoteOne = () => {
+      setToggle(false);
+    }
+    const listenTakeNoteTwo = () => {
+      setToggle(true);
+    }
 
-//   const loaddata = async () => {
-//     let response = await getNotes()
-//     let arr = response.data.data.data
-//     if (typeOfNotes === 'Notes') {
+  //   const loaddata = async () => {
+  //     let response = await getNotes()
+  //     let arr = response.data.data.data
+  //     if (typeOfNotes === 'Notes') {
 
-//       let newArr = arr.filter((note) => note.isArchived === false && note.isDeleted === false)
-//       setNotes(newArr)
+  //       let newArr = arr.filter((note) => note.isArchived === false && note.isDeleted === false)
+  //       setNotes(newArr)
 
-//     } else if (typeOfNotes === 'Archive') {
-//       let newArr = arr.filter((note) => note.isArchived === true && note.isDeleted === false)
-//       setNotes(newArr)
-//     }
-//     else if (typeOfNotes === 'Trash') {
-//       let newArr = arr.filter((note) => note.isArchived === false && note.isDeleted === true)
-//       setNotes(newArr)
-//     }
-//   }
+  //     } else if (typeOfNotes === 'Archive') {
+  //       let newArr = arr.filter((note) => note.isArchived === true && note.isDeleted === false)
+  //       setNotes(newArr)
+  //     }
+  //     else if (typeOfNotes === 'Trash') {
+  //       let newArr = arr.filter((note) => note.isArchived === false && note.isDeleted === true)
+  //       setNotes(newArr)
+  //     }
+  //   }
 
-//   const updatecolor = () => {
-//     loaddata()
-//   }
-//   console.log(notes)
+  //   const updatecolor = () => {
+  //     loaddata()
+  //   }
+  //   console.log(notes)
 
-//   React.useEffect(() => {
-//     loaddata()
-//   }, [typeOfNotes])
+  //   React.useEffect(() => {
+  //     loaddata()
+  //   }, [typeOfNotes])
 
   return (
-    <div className='w-screen' >
+    <div className='w-screen h-screen bg-white' >
       <Header handleDrawer={handleDrawer} />
-      <NavDrawer/>
-      {/* <NavDrawer open={open} setTypeOfNotes={setTypeOfNotes} />
+      <NavDrawer open={open} setTypeOfNotes={setTypeOfNotes} />
       {
         toggles ? <TakeNoteOne listenTakeNoteOne={listenTakeNoteOne} /> : <TakeNoteTwo listenTakeNoteTwo={listenTakeNoteTwo} />
       }
-      <div className='flex'>
+      {/* <div className='flex'>
         {
           notes.map((noteobj) => (<TakeNoteThree noteobj={noteobj} updatecolor={updatecolor} />))
         }

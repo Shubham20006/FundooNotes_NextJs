@@ -6,10 +6,10 @@ import Dashboard from './dashboard'
 
 export default function Home() {
   return (
-    <div>
+    <div className='  bg-white'>
       {/* <Signup/> */}
       <Dashboard/>
-      <Signin />
+      {/* <Signin /> */}
     </div>
   )
 }

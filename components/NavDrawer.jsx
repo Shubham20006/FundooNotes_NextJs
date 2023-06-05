@@ -10,22 +10,27 @@ import ListItemText from '@mui/material/ListItemText';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-// import "../pages/NavDrawer.css"
 //import { connect } from "react-redux"
 
 
 
-const drawerWidth = 240;
 
+const drawerWidth = 240;
+{/* <style>
+.MuiListItem-root:hover{
+    backgroundColor="#1976D2 !important",
+    borderRadius= "0 30px 30px 0"
+}
+</style> */}
 
 const openedMixin = (theme) => ({
     width: drawerWidth,
-
-
+    marginTop: "63px",
+    hover:{backgroundColor:"#1976D2"},
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
-
+        hover:{backgroundColor:"#1976D2"},
     }),
     overflowX: 'hidden',
 
@@ -41,7 +46,7 @@ const closedMixin = (theme) => ({
     [theme.breakpoints.up('sm')]: {
         width: `calc(${theme.spacing(8)} + 1px)`,
         marginTop: "63px",
-       // backgroundColor:"red"
+        hover:{backgroundColor:"#1976D2"},
     },
 });
 
@@ -52,6 +57,7 @@ const Drawer = styled(MuiDrawer, {
 })(({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
+    marginTop: "63px",
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
     ...(open && {
@@ -60,6 +66,7 @@ const Drawer = styled(MuiDrawer, {
     }),
     ...(!open && {
         ...closedMixin(theme),
+   
         '& .MuiDrawer-paper': closedMixin(theme),
     }),
 }));
@@ -69,9 +76,9 @@ function NavDrawer({ open, setTypeOfNotes, dispatch }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <Drawer variant="permanent" open={open}>
-                <List  >
+                <List   >
 
-                    <ListItem key={'Notes'} onClick={() => dispatch({ type: "Notes" })} disablePadding sx={{ display: 'block' }}>
+                    <ListItem className='hover:bg-[#feefc3] rounded-e-[30px]' key={'Notes'} onClick={() => dispatch({ type: "Notes" })} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             onClick={() => setTypeOfNotes('Notes')}
                             sx={{
@@ -92,7 +99,7 @@ function NavDrawer({ open, setTypeOfNotes, dispatch }) {
                             <ListItemText primary={'Notes'} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem key={'Archive'} onClick={() => dispatch({ type: "Archive" })} disablePadding sx={{ display: 'block' }}>
+                    <ListItem key={'Archive'} className='hover:bg-[#feefc3] rounded-e-[30px]' onClick={() => dispatch({ type: "Archive" })} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             onClick={() => setTypeOfNotes('Archive')}
                             sx={{
@@ -116,7 +123,7 @@ function NavDrawer({ open, setTypeOfNotes, dispatch }) {
                             />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem key={'Trash'} onClick={() => dispatch({ type: "Trash" })} disablePadding sx={{ display: 'block' }}>
+                    <ListItem key={'Trash'} className='hover:bg-[#feefc3] rounded-e-[30px]' onClick={() => dispatch({ type: "Trash" })} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             onClick={() => setTypeOfNotes('Trash')}
                             sx={{
