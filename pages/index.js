@@ -6,7 +6,7 @@ import Dashboard from './dashboard'
 
 export default function Home() {
   return (
-    <div className='  bg-white'>
+    <div className=' h-[140vh] bg-white'>
       {/* <Signup/> */}
       <Dashboard/>
       {/* <Signin /> */}

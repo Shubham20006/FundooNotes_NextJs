@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const headerConfig = {
-    // headers : {
-    //     Authorization: localStorage.getItem('token')
-    // }
+    headers : {
+        Authorization:localStorage.getItem('token')
+    }
 }
 
 export const createNote = async(obj) => {
